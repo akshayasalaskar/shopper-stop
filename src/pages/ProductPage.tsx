@@ -4,7 +4,6 @@ import { Product, ProductsResponse } from "../types/api";
 import { productsApi } from "../services/api";
 import { ProductGrid } from "../components/ProductGrid";
 import { Pagination } from "../components/Pagination";
-import { useToastContext } from "../contexts/ToastContext";
 
 const ITEMS_PER_PAGE = 20;
 
@@ -15,7 +14,6 @@ export const ProductPage: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
   const [totalProducts, setTotalProducts] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
-  const { toast } = useToastContext();
 
   const searchQuery = searchParams.get("search") || "";
 
